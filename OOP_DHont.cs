@@ -10,15 +10,15 @@ namespace OOP_DHont
     class politicalParty
     {
         public string partyName { get; set; }
-        public int initialVotes { get; private set; }
-        public int subsequentVotes { get; set; }
+        public int primaryVotes { get; private set; }
+        public int secondaryVotes { get; set; }
         public int partySeats { get; set; }
 
         public politicalParty(string name, int votes)
         {
             partyName = name;
-            initialVotes = votes;
-            subsequentVotes = votes;
+            primaryVotes = votes;
+            secondaryVotes = votes;
         }
 
         public string printParty()
@@ -29,9 +29,18 @@ namespace OOP_DHont
 
         public void DHontMethod()
         {
-            subsequentVotes = initialVotes / (partySeats + 1);
+            secondaryVotes = primaryVotes / (partySeats + 1);
+            primaryVotes = secondaryVotes;
         }
 
+
+        class DHontCalc : politicalParty
+        {
+            static void Main(string[] args)
+            {
+
+            }
+        }
 
     }
 
